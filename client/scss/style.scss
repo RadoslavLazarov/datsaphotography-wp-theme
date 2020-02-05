@@ -1,0 +1,16 @@
+@import "../../node_modules/bootstrap/dist/css/bootstrap-grid";
+@import "../../node_modules/bootstrap/dist/css/bootstrap-reboot";
+@import "../../node_modules/swiper/css/swiper";
+
+@import "./variables";
+@import "./mixins";
+@import "./common";
+@import "./thirdParty/swiper";
+@import "./components/header-home";
+@import "./components/header";
+@import "./components/footer";
+@import "./pages/home";
+@import "./pages/gallery";
+@import "./pages/services";
+@import "./pages/about";
+@import "./pages/contacts";

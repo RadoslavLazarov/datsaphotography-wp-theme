@@ -1,0 +1,120 @@
+@mixin header($position, $color) {
+    position: $position;
+    z-index: 2;
+    display: flex;
+    align-items: center;
+    color: $color;
+    width: 100%;
+    // padding: 45px 0 45px 0;
+    height: $header-height;
+
+    @media (max-width: 991px) {
+        height: $header-height-mobile;
+    }
+
+    .container {
+        // display: flex;
+        // flex-direction: column;
+        // justify-content: center;
+        // height: 100%;
+    }
+
+    .header-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        @media (max-width: 991px) {
+            align-items: center;
+        }
+        
+        .logo {
+            position: absolute;
+            top: 15px;
+            width: 200px;
+            
+            @media (max-width: 991px) {
+              // display: none;
+            //   visibility: hidden;
+            }
+    
+            img {
+                width: 100%;
+                height: unset;
+            }
+        }
+        
+        .main-nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+    
+            .main-menu {
+                display: flex;
+                align-items: center;
+                padding: 0;
+                margin: 0;
+                height: 100px;
+    
+                @media (max-width: 991px) {
+                    display: none;
+                    // visibility: hidden;
+                }
+            
+                li {
+                    text-transform: uppercase;
+                    margin-left: 20px;
+                    display: block;
+    
+                    @media (max-width: 1199px) {
+                        margin-left: 10px;
+                    }
+        
+                    a {
+                        position: relative;
+                        padding: 5px 10px;
+                        color: $color;
+                        font-weight: 600;
+                        letter-spacing: 1px;
+                
+                        &:before {
+                            border-left: 2px solid;
+                            border-right: 2px solid;
+                            transform: scale(1,0);
+                        }
+                
+                        &:after {
+                            border-bottom: 2px solid;
+                            border-top: 2px solid;
+                            -webkit-transform: scale(0,1);
+                            transform: scale(0,1);
+                        }
+                
+                        &:after, &:before {
+                            content: '';
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+                            display: inline-block;
+                            height: 100%;
+                            width: 100%;
+                            opacity: 0;
+                            transition: opacity .5s, transform .5s ;
+                        }
+                
+                        &:hover {
+                            color: inherit;
+                            text-decoration: none;
+                        
+                            &:hover:after, &:hover:before {
+                                opacity: 1;
+                                -webkit-transform: scale(1);
+                                transform: scale(1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
