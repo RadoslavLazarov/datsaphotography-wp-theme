@@ -1,5 +1,11 @@
 <style>
+    
+.ngg-albumoverview.default-view .ngg-navigation {
+    position: absolute;
+    bottom: -50px;
+}
 /* =========== CATEGORIES PAGE =========== */
+
 #gallery-page .ngg-albumoverview.default-view {
     display: flex !important;
     flex-wrap: wrap;
@@ -26,6 +32,7 @@
     left: 0;
     width: 100%;
     transition: transform 1s cubic-bezier(.52,.01,.16,1);
+    padding: 25px;
 }
 
 #gallery-page .ngg-albumoverview.default-view .ngg-album .ngg-albumcontent a {
@@ -68,7 +75,9 @@
     transition: transform 1s cubic-bezier(.52,.01,.16,1);
 }
 
-#gallery-page .ngg-albumoverview.default-view .ngg-album .ngg-albumcontent:hover .ngg-albumtitle {
+#gallery-page .ngg-albumoverview.default-view .ngg-album .ngg-albumcontent:hover .ngg-albumtitle,
+#gallery-page .ngg-albumoverview.default-view .ngg-album .ngg-albumcontent:focus .ngg-albumtitle,
+#gallery-page .ngg-albumoverview.default-view .ngg-album .ngg-albumcontent:active .ngg-albumtitle {
     transform: translateY(50%);
 }
 
@@ -78,15 +87,21 @@
     }   
 }
 
-#gallery-page .ngg-albumoverview.default-view .ngg-album .ngg-albumcontent:hover .ngg-description {
+#gallery-page .ngg-albumoverview.default-view .ngg-album .ngg-albumcontent:hover .ngg-description,
+#gallery-page .ngg-albumoverview.default-view .ngg-album .ngg-albumcontent:focus .ngg-description,
+#gallery-page .ngg-albumoverview.default-view .ngg-album .ngg-albumcontent:active .ngg-description {
     transform: translateY(0);
 }
 
-#gallery-page .ngg-albumoverview.default-view .ngg-album .ngg-albumcontent:hover .thumbnail-overlay {
+#gallery-page .ngg-albumoverview.default-view .ngg-album .ngg-albumcontent:hover .thumbnail-overlay,
+#gallery-page .ngg-albumoverview.default-view .ngg-album .ngg-albumcontent:focus .thumbnail-overlay,
+#gallery-page .ngg-albumoverview.default-view .ngg-album .ngg-albumcontent:active .thumbnail-overlay {
     opacity: 1;
 }
 
-#gallery-page .ngg-albumoverview.default-view .ngg-album .ngg-albumcontent:hover .Thumb {
+#gallery-page .ngg-albumoverview.default-view .ngg-album .ngg-albumcontent:hover .Thumb,
+#gallery-page .ngg-albumoverview.default-view .ngg-album .ngg-albumcontent:focus .Thumb,
+#gallery-page .ngg-albumoverview.default-view .ngg-album .ngg-albumcontent:active .Thumb {
     transform: scale(1.1);
 }
 
@@ -112,7 +127,8 @@
 .ngg-albumoverview.default-view {
     display: flex !important;
     flex-wrap: wrap;
-    margin-top: 0;
+    justify-content: center;
+    margin-top: 40px;
     margin-bottom: 0;
 }
 
@@ -142,12 +158,18 @@
     width: 100%;
 }
 
+#recommended-albums .ngg-albumoverview.default-view .ngg-album-compactbox {
+    margin: 0 !important;
+}
+
 .ngg-albumoverview.default-view .ngg-album-compactbox .ngg-album-link  {
     height: 100%;
     transition: .72s cubic-bezier(.52,.01,.16,1);
 }
 
-.ngg-albumoverview.default-view .ngg-album-compactbox:hover .ngg-album-link  {
+.ngg-albumoverview.default-view .ngg-album-compactbox:hover .ngg-album-link,
+.ngg-albumoverview.default-view .ngg-album-compactbox:focus .ngg-album-link,
+.ngg-albumoverview.default-view .ngg-album-compactbox:active .ngg-album-link  {
     transform: scale(1.1);
 }
 
@@ -155,35 +177,9 @@
     width: 100%;
 }
 
-/* @media (max-width: 850px) {
-    .ngg-albumoverview.default-view .ngg-album-compactbox .Thumb {
-        width: 500px; 
-    }
+#recommended-albums .ngg-albumoverview.default-view .ngg-album-compactbox .Thumb {
+    width: unset;
 }
-
-@media (max-width: 767px) {
-    .ngg-albumoverview.default-view .ngg-album-compactbox .Thumb {
-        width: 400px; 
-    }
-}
-
-@media (max-width: 600px) {
-    .ngg-albumoverview.default-view .ngg-album-compactbox .Thumb {
-        width: 300px; 
-    }
-}
-
-@media (max-width: 470px) {
-    .ngg-albumoverview.default-view .ngg-album-compactbox .Thumb {
-        width: 250px; 
-    }
-}
-
-@media (max-width: 400px) {
-    .ngg-albumoverview.default-view .ngg-album-compactbox .Thumb {
-        width: 200px; 
-    }
-} */
 
 .ngg-albumoverview.default-view .ngg-album-compact h4 {
     position: absolute;
@@ -229,12 +225,14 @@
     transition: all .72s cubic-bezier(.52,.01,.16,1);
 }
 
-.ngg-albumoverview.default-view .ngg-album-compactbox:hover .thumbnail-overlay {
+.ngg-albumoverview.default-view .ngg-album-compactbox:hover .thumbnail-overlay,
+.ngg-albumoverview.default-view .ngg-album-compactbox:focus .thumbnail-overlay,
+.ngg-albumoverview.default-view .ngg-album-compactbox:active .thumbnail-overlay {
     opacity: 1;
     transform: scale(1);
 }
-
 /* =========== END ALBUMS PAGE =========== */
+
 /* =========== ALBUM PAGE =========== */
 .sl-caption {
     display: none !important;
@@ -269,7 +267,9 @@
     /* transition: opacity .5s ease-in-out; */
 }
 
-.ngg-galleryoverview.default-view .ngg-gallery-thumbnail img:hover {
+.ngg-galleryoverview.default-view .ngg-gallery-thumbnail img:hover,
+.ngg-galleryoverview.default-view .ngg-gallery-thumbnail img:focus,
+.ngg-galleryoverview.default-view .ngg-gallery-thumbnail img:active {
     opacity: .7;
     transform: scale(1.1);
 }

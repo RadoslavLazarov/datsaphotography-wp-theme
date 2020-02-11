@@ -17,17 +17,15 @@ var bannerSlider = new Swiper('.swiper-banner', {
 });
 
 jQuery(function ($) {
-    if ($('.recommended-albums .ngg-albumoverview').length) {
-        $('.recommended-albums .ngg-albumoverview').addClass('swiper-wrapper');
-        $('.recommended-albums .ngg-clear').detach();
+    if ($('#recommended-albums .ngg-albumoverview').length) {
+        $('#recommended-albums .ngg-albumoverview').addClass('swiper-wrapper');
+        $('#recommended-albums .ngg-clear').detach();
     }
 
     var albumsSwiper = new Swiper('.swiper-albums', {
         init: false,
         speed: 600,
         slidesPerView: 'auto',
-        // centeredSlides: true,
-        // spaceBetween: 25,
         simulateTouch: false,
         navigation: {
             nextEl: '.albums-button-next',
@@ -35,15 +33,14 @@ jQuery(function ($) {
         },
     });
 
-    $('.recommended-albums .ngg-album-compact').each(function (i, el) {
+    $('#recommended-albums .ngg-album-compact').each(function (i, el) {
         $(el).addClass('swiper-slide');
-        console.log($(el).find('h4'));
         albumsSwiper.addSlide(i, el);
     });
     albumsSwiper.init();
 });
 
-}).call(this,require("e/U+97"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_a0a236ba.js","/")
+}).call(this,require("e/U+97"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_f94236fb.js","/")
 },{"buffer":3,"e/U+97":5,"swiper":6}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';

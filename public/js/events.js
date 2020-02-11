@@ -3,14 +3,14 @@
 jQuery(function ($) {
 
     // Toggle modal window on service page
-    var $modal = $('.service-modal');
-    var $modalContainer = $('.service-modal__container');
-    var $modalContent = $('.service-modal__content');
+    var $modal = $('.modal');
+    var $modalContainer = $('.modal__container');
+    var $modalContent = $('.modal__content');
     var $behindModal = $('header, main, footer');
 
     $('.service__button').on('click', function () {
         var serviceContent = $(this).closest('.service__box').find('.service__content').clone();
-
+        $('.menu-top-container').hide();
         $modalContent.html(serviceContent);
         $modal.show();
 
@@ -21,7 +21,8 @@ jQuery(function ($) {
     });
 
     $modal.on('click', function (e) {
-        if ($(e.target)[0].className == 'service-modal__wrapper') {
+        if ($(e.target)[0].className == 'modal__wrapper') {
+            $('.menu-top-container').show();
             $modalContainer.removeClass('show-in');
             $behindModal.removeClass('blur-in');
 
@@ -31,7 +32,8 @@ jQuery(function ($) {
         }
     });
 
-    $('.service-modal__close').on('click', function (e) {
+    $('.modal__close').on('click', function (e) {
+        $('.menu-top-container').show();
         $modalContainer.removeClass('show-in');
         $behindModal.removeClass('blur-in');
 
@@ -43,7 +45,7 @@ jQuery(function ($) {
 
 });
 
-}).call(this,require("e/U+97"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_def9dad5.js","/")
+}).call(this,require("e/U+97"),typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {},require("buffer").Buffer,arguments[3],arguments[4],arguments[5],arguments[6],"/fake_42f36e80.js","/")
 },{"buffer":3,"e/U+97":5}],2:[function(require,module,exports){
 (function (process,global,Buffer,__argument0,__argument1,__argument2,__argument3,__filename,__dirname){
 var lookup = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/';

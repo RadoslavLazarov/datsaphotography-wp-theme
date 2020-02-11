@@ -1,9 +1,6 @@
 #contacts-page {
     .form-wrapper {
-        overflow: hidden;
         padding: 50px 0;
-        display: flex;
-        justify-content: center;
         background-position: center;
         background-size: cover;
         background-attachment: fixed;
@@ -15,8 +12,7 @@
             justify-content: center;
             background: inherit;
             overflow: hidden;
-            width: 30%;
-            border-radius: 10px;
+            border-radius: 5px;
 
             &:before {
                 content: "";
@@ -44,6 +40,10 @@
             .wpcf7-form {
                 width: 100%;
                 padding: 0 60px;
+
+                @media (max-width: 500px) {
+                    padding: 0 30px;
+                }
 
                 h2 {
                     text-align: center;
@@ -110,40 +110,88 @@
         }
     }
 
-    .map-wrapper {
+    .contacts-wrapper {
         margin-top: 100px;
         
-        .contacts {
-            display: flex;
-            flex-direction: column;
-            justify-content: space-evenly;
-            background-color: #f0f3f6;
-            padding: 30px 0;
-    
-            .contact {
+        .map-wrapper {
+            @media (max-width: 991px) {
+                padding: 0;
+            }
+
+            #map {
+                width: 100%;
+                min-height: 300px;
+                height: 100%;
+            }
+        }  
+        
+        .contacts-container {
+            @media (max-width: 991px) {
+                padding: 0;
+            }
+
+            .contacts {
                 display: flex;
-                align-items: center;
-                padding: 30px;
-                color: #21759b;
-    
-                i {
+                flex-direction: column;
+                justify-content: space-evenly;
+                background-color: #f0f3f6;
+                padding: 30px 0;
+        
+                a {
                     display: flex;
                     justify-content: center;
-                    font-size: 2em;
-                    width: 40px;  
-                }
-    
-                a {
                     padding: 0 25px;
-                    color: #000;             
+    
+                    @media (max-width: 991px) {
+                        padding: 0;
+                    }
+    
+                    &:hover {
+                        text-decoration: none;
+    
+                        .contact div {
+                            opacity: 0.6;
+                        }
+                    }
+    
+                    .contact {
+                        display: flex;
+                        align-items: center;
+                        padding: 30px;
+                        color: #21759b;
+        
+                        @media (max-width: 991px) {
+                            flex-direction: column;
+                            padding: 30px 0;;
+                        }
+            
+                        i {
+                            display: flex;
+                            justify-content: center;
+                            font-size: 2em;
+                            width: 40px;  
+                            margin-right: 25px;
+        
+                            @media (max-width: 991px) {
+                                margin: 0 0 25px 0;
+                            }
+                        }
+    
+                        div {
+                            color: #000;
+                            transition: .3s;
+    
+                            @media (max-width: 400px) {
+                                font-size: 0.925em;
+                            }
+    
+                            @media (max-width: 350px) {
+                                font-size: 0.875em;
+                            }
+                        }
+                    }
                 }
             }
-        }
-    
-        #map {
-            width: 100%;
-            min-height: 300px;
-            height: 100%;
         }
     }  
 }

@@ -1,22 +1,8 @@
 <?php get_header(); ?>
     
 <main>
+    <?php get_template_part( 'template-parts/content', 'page-top' ); ?>
     <div class="container page-default">
-        <div class="row">
-            <div class="col-12">
-                <?php
-                    if (!is_front_page()) {
-                        echo do_shortcode( '[breadcrumb]' ); 
-                    }
-                ?>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-12 heading">
-                <h1><?php echo get_the_title() ?></h1>
-                <div class="heading__separator"></div>
-            </div>
-        </div>
         <div class="row">
             <div class="col-12">
                 <?php

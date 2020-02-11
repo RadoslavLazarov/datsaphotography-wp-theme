@@ -21,6 +21,18 @@
                         <?php endif ?>
                     </div>
                     <div class="main-nav">
+                        <input type="checkbox" class="mobile-icon">
+                        <div class="nav-button">
+                            <svg class="nav-icon" xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 50 50">
+                                <g>
+                                    <line class="nav-icon__bar" x1="13" y1="16.5" x2="37" y2="16.5" />
+                                    <line class="nav-icon__bar" x1="13" y1="24.5" x2="37" y2="24.5" />
+                                    <line class="nav-icon__bar" x1="13" y1="24.5" x2="37" y2="24.5" />
+                                    <line class="nav-icon__bar" x1="13" y1="32.5" x2="37" y2="32.5" />
+                                    <circle class="nav-icon__circle" r="23" cx="25" cy="25" />
+                                </g>
+                            </svg>
+                        </div>
                         <?php wp_nav_menu(array('theme_location' => 'main-menu', 'menu_class' => 'main-menu')) ?>
                     </div>
                 </div>

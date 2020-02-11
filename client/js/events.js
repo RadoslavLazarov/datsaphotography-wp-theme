@@ -1,14 +1,14 @@
 jQuery(function ($) {
 
     // Toggle modal window on service page
-    var $modal = $('.service-modal');
-    var $modalContainer = $('.service-modal__container');
-    var $modalContent = $('.service-modal__content');
+    var $modal = $('.modal');
+    var $modalContainer = $('.modal__container');
+    var $modalContent = $('.modal__content');
     var $behindModal = $('header, main, footer');
 
     $('.service__button').on('click', function () {
         var serviceContent = $(this).closest('.service__box').find('.service__content').clone();
-
+        $('.menu-top-container').hide();
         $modalContent.html(serviceContent);
         $modal.show();
 
@@ -19,7 +19,8 @@ jQuery(function ($) {
     });
 
     $modal.on('click', function (e) {
-        if ($(e.target)[0].className == 'service-modal__wrapper') {
+        if ($(e.target)[0].className == 'modal__wrapper') {
+            $('.menu-top-container').show();
             $modalContainer.removeClass('show-in');
             $behindModal.removeClass('blur-in');
 
@@ -29,7 +30,8 @@ jQuery(function ($) {
         }
     });
 
-    $('.service-modal__close').on('click', function (e) {
+    $('.modal__close').on('click', function (e) {
+        $('.menu-top-container').show();
         $modalContainer.removeClass('show-in');
         $behindModal.removeClass('blur-in');
 

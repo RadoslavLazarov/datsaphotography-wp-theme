@@ -1,9 +1,13 @@
-.about-background {
+.about__background {
     background-position: center;
     background-size: cover;
+
+    @media (max-width: 991px) {
+        height: 40vh;
+    }
 }
 
-.about-content {
+.about__content {
     min-height: 800px;
     background-color: #f0f3f6;
     padding: 7%;

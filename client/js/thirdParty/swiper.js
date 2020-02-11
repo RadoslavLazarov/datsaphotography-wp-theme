@@ -15,17 +15,15 @@ var bannerSlider = new Swiper('.swiper-banner', {
 });
 
 jQuery(function ($) {
-    if ($('.recommended-albums .ngg-albumoverview').length) {
-        $('.recommended-albums .ngg-albumoverview').addClass('swiper-wrapper');
-        $('.recommended-albums .ngg-clear').detach();
+    if ($('#recommended-albums .ngg-albumoverview').length) {
+        $('#recommended-albums .ngg-albumoverview').addClass('swiper-wrapper');
+        $('#recommended-albums .ngg-clear').detach();
     }
 
     var albumsSwiper = new Swiper('.swiper-albums', {
         init: false,
         speed: 600,
         slidesPerView: 'auto',
-        // centeredSlides: true,
-        // spaceBetween: 25,
         simulateTouch: false,
         navigation: {
             nextEl: '.albums-button-next',
@@ -33,9 +31,8 @@ jQuery(function ($) {
         },
     });
 
-    $('.recommended-albums .ngg-album-compact').each(function (i, el) {
+    $('#recommended-albums .ngg-album-compact').each(function (i, el) {
         $(el).addClass('swiper-slide');
-        console.log($(el).find('h4'));
         albumsSwiper.addSlide(i, el);
     });
     albumsSwiper.init();
